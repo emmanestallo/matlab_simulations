@@ -1,4 +1,4 @@
-%% First Part of the Prog Exer
+%% Computing the DFT of a Sinusoid Part 2
 N = 200;
 n = 0:N-1; 
 
