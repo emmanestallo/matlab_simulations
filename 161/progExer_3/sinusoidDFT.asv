@@ -1,0 +1,19 @@
+n = 0:49; 
+
+x = cos((1394/4000)*pi*n + pi/4) + sin((2418/4000)*pi*n + pi/18);
+
+fft_x = abs(fft(x,100)); 
+deg = linspace(0,2*pi,100);  
+
+phase = angle(fft(x,100)); 
+
+figure 
+stem(deg,fft_x)
+title('50-point fft of x')
+xlabel('radians per sample') 
+ylabel('magnitude')
+
+figure
+stem(deg,phase)
+title('phase response of the DFT of x')
+xlabel('radians per sample') 
