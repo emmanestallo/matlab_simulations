@@ -82,8 +82,8 @@ ylabel('phase')
 
 N = 1000; 
 
-L = 100; 
-M = 10; 
+L = 50; 
+M = 20; 
 
 n = 0:N-1; 
 x = cos((1394/4000)*pi*n + pi/4) + sin((2418/4000)*pi*n + pi/18); 
@@ -114,10 +114,10 @@ end
 
 tic()
 DFT = W_lp*((y*W_mq).*W_lq);  
-final_DFT = reshape(DFT',1000,1); 
+final_DFT = reshape(DFT',N,1); 
 toc()
 
-phase = reshape(angle(DFT)',1000,1); 
+phase = reshape(angle(DFT)',N,1); 
 
 figure 
 stem(deg,abs(final_DFT))
