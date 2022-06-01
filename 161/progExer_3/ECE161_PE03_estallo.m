@@ -1,7 +1,7 @@
 %%Computing the DFT of a Sinusoid Part 1 
 
 N = 50;
-zero_pad = 50; 
+zero_pad = 150; 
 n = 0:N-1; 
 
 x = [cos((1394/4000)*pi*n + pi/4) + sin((2418/4000)*pi*n + pi/18), zeros(1,zero_pad)];
