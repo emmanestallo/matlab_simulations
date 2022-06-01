@@ -1,11 +1,13 @@
-N = 1000; 
+x = [1,1.25,1.5,1.75,2,2.25,2.5,2.75,3,4,5,0]; 
 
-L = 100; 
-M = 10; 
+N = 12; 
+L = 4; 
+M = 3; 
 
 n = 0:N-1; 
-x = cos((1394/4000)*pi*n + pi/4) + sin((2418/4000)*pi*n + pi/18); 
 y = reshape(x,L,M);  
+
+deg = linspace(0,2*pi,N); 
 
 W_mq = zeros(M,M);
 for a = 0:M-1
@@ -28,6 +30,7 @@ for a = 0:L-1
     end
 end
 
-finalDFT = W_lp*((y*W_mq).*W_lq)
-
-
+tic()
+DFT = W_lp*((y*W_mq).*W_lq);  
+final_DFT = reshape(DFT',N,1); 
+toc() 
