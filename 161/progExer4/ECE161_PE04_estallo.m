@@ -83,3 +83,5 @@ fvtool(h);
 
 %% IIR Filter 
 
+%I used the filter designer function
+filterdesigner(); 
