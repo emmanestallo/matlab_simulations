@@ -1,0 +1,42 @@
+w_c = 0.2;
+
+M_31 = 31; 
+n_31 = 0:1:M_31-1; 
+k_31 = (M_31-1)/2; 
+
+h_d31 = (w_c/pi)*sinc(w_c*(n_31-k));
+hamm31_x = h_d.*hamming(M_31)';
+
+
+M_61 = 61; 
+n_61 = 0:1:M_61-1; 
+k_61 = (M_61-1)/2; 
+
+h_d = (w_c/pi)*sinc(w_c*(n_61-k));
+hamm61_x = h_d.*hamming(M_61)';
+
+
+M_121 = 121; 
+n_121 = 0:1:M_121-1; 
+k_121 = (M_121-1)/2; 
+
+h_d = (w_c/pi)*sinc(w_c*(n_121-k));
+hamm121_x = h_d.*hamming(M_121)';
+
+%%%
+%n_61 = 0:1:M_61-1; 
+%k_61 = (M_61-1)/2; 
+
+%h_d61 = (w_c/pi)*sinc(w_c*(n_61-k));
+%hamm_x61 = h_d61.*hamming(M_61);
+
+%n_121 = 0:1:M_121-1; 
+%k_121 = (M_121-1)/2; 
+
+%h_d121 = (w_c/pi)*sinc(w_c*(n_121-k));
+%hamm_x121 = h_d121.*hamming(M_121);
+%%%
+
+out = fvtool(hamm_x); 
+%addfilter(out,hamm_x61);
+%addfilter(out,hamm_x121);
