@@ -1,14 +1,8 @@
 Hr = [zeros(1,12), 0.7, ones(1,3)]';
-
-
 M = 31; 
-
 alpha = (M-1)/2; 
-
-
 a_kn = zeros(16,alpha); 
-
-x = 0:30 
+x = 0:30;
 
 for k = 0:15
     for n = 0:alpha
