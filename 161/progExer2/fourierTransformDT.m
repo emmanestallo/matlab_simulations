@@ -24,17 +24,12 @@ end
 c = exp_matrix_analysis*evenSqWave'*(1/N); %10 x 1 matrix
 x = exp_matrix_synthesis'*c;
 
-figure
-subplot(2,1,1)
-stem(abs(x))
-title(['Reconstructed Signal using ',num2str(k),' Fourier Coefficients']) 
-
-subplot(2,1,2)
-stem(evenSqWave)
-title('Original Signal')
 
 mag = abs(c)'; 
 phase = angle(c)'; 
+
+err_ = evenSqWave - abs(x)'; 
+mse = mean(err_.^2);
 
 figure
 subplot(2,1,1)
@@ -48,6 +43,15 @@ stem(0:k-1,phase)
 title('Angle (c)')
 xlabel('c_k')
 ylabel('phase')
+
+figure
+subplot(2,1,1)
+stem(abs(x))
+title(['Reconstructed Signal using ',num2str(k),' Fourier Coefficients']) 
+
+subplot(2,1,2)
+stem(evenSqWave)
+title('Original Signal')
 
 
 
