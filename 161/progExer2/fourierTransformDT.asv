@@ -1,0 +1,26 @@
+fs = 1/8000; 
+
+t = 0:fs:1-fs;  
+w_0 = pi/4000; 
+evenSqWave = [zeros(1,3000), ones(1,2000), zeros(1,3000)]; %1 x 8000 array
+
+c = zeros(1,9); 
+
+exp_matrix = zeros(10,8000);
+
+for m = 0:9 
+    for n = 0:7999
+        exp_matrix(m+1,n+1) = exp(-1i*m*w_0*n); % 10 x 8000 matrix
+    end
+end
+
+c = 
+
+
+
+
+
+stem(t,evenSqWave)
+title('Even Symmetric Square Wave')
+ylabel('Amplitude')
+xlabel('Time')
